@@ -207,3 +207,9 @@ The following screenshot shows the deployed Cloud Data Redundancy Removal System
 ![Cloud Data Redundancy Removal System](screenshots/cloud-data-redundancy-system.png)
 
 ---
+
+### Architecture Diagram
+
+The following diagram represents the deployed AWS infrastructure and application request flow.
+
+![AWS Architecture Diagram](screenshots/aws-architecture-diagram.png)
