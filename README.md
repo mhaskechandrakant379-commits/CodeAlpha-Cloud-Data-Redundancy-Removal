@@ -198,3 +198,12 @@ This project provides a simple solution that validates user information before i
 
 &#x20;                   data.db
 
+---
+
+## 📸 Application Screenshot
+
+The following screenshot shows the deployed Cloud Data Redundancy Removal System running on AWS EC2.
+
+![Cloud Data Redundancy Removal System](screenshots/cloud-data-redundancy-system.png)
+
+---
