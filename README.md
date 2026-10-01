@@ -213,3 +213,53 @@ The following screenshot shows the deployed Cloud Data Redundancy Removal System
 The following diagram represents the deployed AWS infrastructure and application request flow.
 
 ![AWS Architecture Diagram](screenshots/aws-architecture-diagram.png)
+
+---
+
+## ⚙️ Infrastructure & Deployment Details
+
+### Amazon EC2
+
+The Flask application is deployed on an Amazon EC2 instance running Amazon Linux 2023.
+
+### Security Group
+
+The EC2 Security Group controls inbound network traffic to the instance.
+
+- HTTP — TCP port 80 — allows web application access
+- SSH — TCP port 22 — restricted to the administrator's public IP address
+
+### Nginx
+
+Nginx is configured as a reverse proxy and listens for HTTP requests on port 80.
+
+Incoming requests are forwarded to the Gunicorn application server using:
+
+`http://127.0.0.1:5000`
+
+### Gunicorn
+
+Gunicorn acts as the WSGI application server and runs the Flask application on port 5000.
+
+### Systemd
+
+A dedicated `codealpha.service` systemd service manages the Flask/Gunicorn application.
+
+The service is enabled to start automatically with the server.
+
+### Database
+
+SQLite is used as the application's database for storing user records and preventing duplicate email entries.
+
+---
+
+## 🔄 Deployment Flow
+
+1. User sends an HTTP request to the EC2 public IP.
+2. AWS Security Group allows HTTP traffic on port 80.
+3. Nginx receives the request.
+4. Nginx forwards the request to Gunicorn at `127.0.0.1:5000`.
+5. Gunicorn serves the Flask application.
+6. Flask processes the request and interacts with the SQLite database.
+7. The response is returned to the user through Nginx.
+
