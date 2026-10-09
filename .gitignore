@@ -5,3 +5,4 @@ __pycache__/
 .env
 *.pem
 data.db
+streamlit_data.db
