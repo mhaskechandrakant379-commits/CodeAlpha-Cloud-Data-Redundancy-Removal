@@ -263,3 +263,9 @@ SQLite is used as the application's database for storing user records and preven
 6. Flask processes the request and interacts with the SQLite database.
 7. The response is returned to the user through Nginx.
 
+## 🔗 Project Links
+
+- Live application URL: http://3.24.205.206/
+
+- GitHub Repository: [View Source Code](https://github.com/mhaskechandrakant379-commits/CodeAlpha-Cloud-Data-Redundancy-Removal)
+
